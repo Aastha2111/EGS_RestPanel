@@ -29,30 +29,17 @@
     <div id="AnimatedSideBar"></div>
     <div style="margin-left: 100px; margin-top: 20%">
       <div
-        id="Rest-Details"
+      
         class="container card m-auto pt-4"
         style="background-color: #f5f5f5; margin-top: 30%"
       >
-        <div class="container col-md-6" id="ImageInputForm">
-          <div class="mb-2">
-            <label for="files" class="btn">Select logo</label>
-            <input
-              class="form-control"
-              type="file"
-              id="formFile"
-              onchange="preview()"
-            />
-            <button onclick="clearImage()" class="btn btn-primary mt-3">
-              Reset
-            </button>
-          </div>
-          <img id="frame" src="" class="img-fluid" />
-        </div>
-        <form class="container">
+        
+        <form class="container" method="POST" id="Rest-Details">
           <div class="form-row">
             <div class="form-group col-9 offset-1">
-              <label for="inputEmail4">Restaurant Name</label>
+              <label for="resName">Restaurant Name</label>
               <input
+              id="resName"
                 type="text"
                 class="form-control"
                 placeholder="Name"
@@ -60,62 +47,62 @@
               />
             </div>
             <div class="form-group col-9 offset-1">
-              <label for="email">Email</label>
+              <label for="resEmail">Email</label>
               <input 
               type="email"
               class="form-control c-green"
-              id="email"
+              id="resEmail"
               placeholder="xyz@gmail.com"
               name="email"
               style="background-color: rgba(70, 205, 123, 0.15)"
                />
             </div>
             <div class="form-group col-9 offset-1">
-              <label for="phone">Phone</label>
+              <label for="resPhone">Phone</label>
               <input 
               type="tel"
               class="form-control c-green"
-              id="phone"
-              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-              placeholder="xyz@gmail.com"
-              name="email"
+              id="resPhone"
+              
+              placeholder="9947472"
+              name="phn"
               style="background-color: rgba(70, 205, 123, 0.15)"
                />
             </div>
           </div>
           <div class="form-group col-9 offset-1">
-            <label for="inputAddress">Address</label>
+            <label for="resAddress">Address</label>
             <input
               type="text"
               class="form-control c-green"
-              id="inputAddress"
+              id="resAddress"
               placeholder="1234 Main St"
               style="background-color: rgba(70, 205, 123, 0.15)"
             />
           </div>
           <div class="form-group col-9 offset-1">
-            <label for="inputAddress2">Address 2</label>
+            <label for="resAddress2">Address 2</label>
             <input
               type="text"
               class="form-control c-green"
-              id="inputAddress2"
+              id="resAddress2"
               placeholder="Apartment, studio, or floor"
               style="background-color: rgba(70, 205, 123, 0.15)"
             />
           </div>
           <div class="form-group col-9 offset-1">
-            <label for="inputCity">City</label>
+            <label for="resCity">City</label>
             <input
               type="text"
               class="form-control c-green"
-              id="inputCity"
+              id="resCity"
               style="background-color: rgba(70, 205, 123, 0.15)"
             />
           </div>
           <div class="form-group col-9 offset-1">
-            <label for="inputState">State</label>
+            <label for="resState">State</label>
             <select
-              id="inputState"
+              id="resState"
               class="form-control"
               style="background-color: rgba(70, 205, 123, 0.15)"
             >
@@ -124,50 +111,65 @@
             </select>
           </div>
           <div class="form-group col-9 offset-1">
-            <label for="inputZip">PinCode</label>
+            <label for="resPincode">PinCode</label>
             <input
               type="text"
               class="form-control"
-              id="inputZip"
+              id="resPincode"
               style="background-color: rgba(70, 205, 123, 0.15)"
             />
           </div>
+          <div class="container col-md-6" id="ImageInputForm">
+            <div class="mb-2">
+              <label for="resLogofiles" class="btn">Select logo</label>
+              <input
+                class="form-control"
+                type="file"
+                id="resLogofiles"
+                onchange="preview()"
+              />
+              <button onclick="clearImage()" class="btn btn-primary mt-3">
+                Reset
+              </button>
+            </div>
+            <img id="frame" src="" style="height: 240px;" class="img-fluid" />
+          </div>
           <div class="form-row ">
             <div class="form-group col-9 offset-1">
-              <label for="GST">GST No</label>
+              <label for="resGST">GST No</label>
               <input
                 type="text"
                 class="form-control c-green"
-                id="gst"
+                id="resGST"
                 style="background-color: rgba(70, 205, 123, 0.15)"
               />
             </div>
             <div class="form-group col-9 offset-1">
-              <label for="fssai">FSSAI </label>
+              <label for="resfssai">FSSAI </label>
               <input
                 type="text"
                 class="form-control c-green"
-                id="fssai"
+                id="resfssai"
                 style="background-color: rgba(70, 205, 123, 0.15)"
               />
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-9 offset-1">
-              <label for="ownername">Owner Name</label>
+              <label for="resOwnername">Owner Name</label>
               <input
                 type="text"
                 class="form-control c-green"
-                id="inputCity"
+                id="resOwnername"
                 style="background-color: rgba(70, 205, 123, 0.15)"
               />
             </div>
             <div class="form-group col-9 offset-1">
-              <label for="ownercontact">Owner Contact Details </label>
+              <label for="resOwnercontact">Owner Contact Details </label>
               <input
                 type="text"
                 class="form-control c-green"
-                id="ownerDetails"
+                id="resOwnercontact"
                 style="background-color: rgba(70, 205, 123, 0.15)"
               />
             </div>
@@ -182,13 +184,14 @@
           </div>
           <div class="buttons" style="text-align: center">
             <button
-              type="submit"
+              onclick="addRestaurant()"
               class="btn btn-primary mb-1 rounded-pill"
               style="
                 width: 100px;
                 background-color: rgba(70, 205, 123, 0.15);
                 color: black;
               "
+             
             >
               ADD
             </button>
@@ -231,5 +234,146 @@
         frame.src = "";
       }
     </script>
+    <script>
+      //  if(type === "POST" || type == "PUT"){
+        
+
+        const form  = document.getElementById('Rest-Details');
+        form.addEventListener('submit', (event) => {
+        // handle the form data
+        event.preventDefault();
+        res_name = document.getElementById( "resName" );
+        res_email = document.getElementById( "resEmail" );
+        res_phn = document.getElementById( "resPhone" );
+        res_address = document.getElementById( "resAddress" );
+        res_address2 = document.getElementById( "resAddress2" );
+        res_city = document.getElementById( "resCity" );
+        res_state = document.getElementById( "resState" );
+        res_pincode = document.getElementById( "resPincode" );
+        res_gst = document.getElementById( "resGST" );
+        res_fssai = document.getElementById( "resfssai" );
+        res_ownername = document.getElementById( "resOwnername" );
+        res_ownercontact = document.getElementById( "resOwnercontact" );
+        
+        fulladdress= res_address.value + res_address2.value + res_city.value;
+        console.log(fulladdress.value);
+
+        var data = {
+          // name: res_name.value,
+          // name:res_name.value,
+          // email: res_name.value,
+          // phone_number: res_phn.value,
+          // Menu:"veg",
+          // // pincode:res_pincode,
+          // pincode:"112032",
+          // address: fulladdress,
+          // subscription:"yes",
+          // logo:"none",
+          // owner_name: res_ownername.value,
+          // owner_contact:res_ownername.value,
+          // gst_no:res_gst.value
+          name:"res_name.value",
+          email: "res_name.value",
+          phone_number:"phn",
+          Menu:"veg",
+          // pincode:res_pincode,
+          pincode:"112032",
+          address: "fulladdress",
+          subscription:"yes",
+          logo:"none",
+          owner_name: "res_ownername.value",
+          owner_contact:"res_ownername.value",
+          gst_no:"res_gst.value"
+        };
+        console.log(data);
+        console.log(data.name);
+
+        let res = fetch("http://127.0.0.1:5000/new/restaurant/add",
+        {
+            method :"POST",
+            headers : {
+                "Content-type" :"application/json",
+                "Access-Control-Allow-Origin": "*",
+            },
+            // body :JSON.stringify(data),
+            body :JSON.stringify(data),
+        }).then((res)=>{
+            if(res.ok){
+                console.log("HTTP req Successful");
+                window.alert("succes");
+              }
+              else{
+                console.log("HTTPreq unsuccessful");
+                window.alert(" failed");
+            }
+            return res;
+        })
+        .then((res)=>res.json())
+        .then((data)=>console.log(data))
+        .catch((error)=>console.log(error));
+
+        // console.log(response);
+    }
+);
+
+        
+// async function addRestaurant(e) {
+//   e.preventDefault();
+//   res_name = document.getElementById( "resName" );
+//         res_email = document.getElementById( "resEmail" );
+//         res_phn = document.getElementById( "resPhone" );
+//         res_address = document.getElementById( "resAddress" );
+//         res_address2 = document.getElementById( "resAddress2" );
+//         res_city = document.getElementById( "resCity" );
+//         res_state = document.getElementById( "resState" );
+//         res_pincode = document.getElementById( "resPincode" );
+//         res_gst = document.getElementById( "resGST" );
+//         res_fssai = document.getElementById( "resfssai" );
+//         res_ownername = document.getElementById( "resOwnername" );
+//         res_ownercontact = document.getElementById( "resOwnercontact" );
+        
+//         fulladdress= res_address.value + res_address2.value + res_city.value;
+//         console.log(fulladdress.value);
+//   var data = {
+//     name:"res_name.value",
+//           email: "res_name.value",
+//           phone_number:"phn",
+//           Menu:"veg",
+//           // pincode:res_pincode,
+//           pincode:"112032",
+//           address: "fulladdress",
+//           subscription:"yes",
+//           logo:"none",
+//           owner_name: "res_ownername.value",
+//           owner_contact:"res_ownername.value",
+//           gst_no:"res_gst.value"
+//   };
+
+//   // console.log("reached before");
+//   let response = await fetch(
+//     "http://127.0.0.1:5000/new/restaurant/add",
+//     {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json;charset=utf-8",
+//         "Access-Control-Allow-Origin": "*",
+//       },
+//       body: JSON.stringify(data),
+//     }
+//   );
+//   alert("Thank You for Your Query!!! Our team will get back to you Shortly.");
+//   // console.log(data)
+
+//   // console.log("reached");
+
+//   // let result = await response.json();
+//   // alert(result.message)
+//   // console.log(result)
+//   location.reload();
+// }
+
+  
+    </script>
+
   </body>
 </html>
