@@ -141,7 +141,7 @@
         },
       ];
       const container = document.getElementById("MenuList");
-      foodList.forEach((result) => {
+      foodList.forEach((result,index) => {
         // Construct card content
         const content = `
  	 <div class='col-lg-4 col-md-6 col-sm-12 itemcard bg-white m-1 py-3' style="">
@@ -166,8 +166,8 @@
                     </div>
                     </div>
                     <div class='d-flex justify-content-start' style=" ">
-                    <button class="AddTag rounded-pill py-1 " style=" width:11;" id="addbtn" onclick="Addfunction()">Add</button>
-                    <button class="AddTag rounded-pill py-1 " style="" id="addbtn" onclick="Addfunction()">update</button>
+                    <button class="AddTag rounded-pill py-1 " style=" width:11;" id=${index} onclick="Addfunction(${index})">Add</button>
+                    <button class="AddTag rounded-pill py-1 " style="" id="${index}" onclick="Addfunction(${index})">update</button>
                                 
                     </div>
                 </div>
@@ -180,8 +180,9 @@
       });
     </script>
     <script>
-      function Addfunction() {
-        var btn = document.getElementById("addbtn");
+      function Addfunction(index) {
+
+        var btn = document.getElementById(index);
 
         // console.log(text);
         if (btn.innerHTML == "Add") {
